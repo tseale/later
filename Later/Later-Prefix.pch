@@ -1,0 +1,32 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+	#import <UIKit/UIKit.h>
+	#import <Foundation/Foundation.h>
+	#import	"LaterGlobalData.h"
+	#import "IIViewDeckController.h"
+
+	#define MESSAGE_DATA [LaterGlobalData sharedInstance].globalData
+	#define TRASH_MESSAGES [[LaterGlobalData sharedInstance].globalData objectForKey:@"trash"]
+	#define PENDING_MESSAGES [[LaterGlobalData sharedInstance].globalData objectForKey:@"pending"]
+	#define SENT_MESSAGES [[LaterGlobalData sharedInstance].globalData objectForKey:@"sent"]
+
+	#define TOP_BAR_HEIGHT 65
+	#define BOTTOM_BAR_HEIGHT 50
+	#define CELL_HEIGHT 80
+
+	#define GREEN_COLOR [UIColor colorWithRed:0.38f green:0.85f blue:0.38f alpha:1.00f]
+	#define RED_COLOR [UIColor colorWithRed:0.94f green:0.33f blue:0.04f alpha:1.00f]
+	#define BLUE_COLOR [UIColor colorWithRed:0.32f green:0.72f blue:0.86f alpha:1.00f]
+
+#endif
